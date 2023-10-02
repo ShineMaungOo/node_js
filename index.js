@@ -40,10 +40,7 @@ const server = http.createServer((req,res) => {
         const output = template.replace('{%PRODUCT__CARD%}', card);
     res.end(output);
     }else if(pathname === `/product`){
-        // console.log(query.id);
         const detail = replaceTemplateEngine(cardDetail, dataObj[query.id-1])
-        // res.end('<h1>This is the product page.</h1>');
-        console.log(dataObj[query.id-1]);    
         res.end(detail);
     }else if(pathname === '/api'){
         res.writeHead(200, {
